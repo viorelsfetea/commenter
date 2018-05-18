@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "The Commenter",
+    "version": "0.1",
+    "description": "Searches the comments for the current tab's url",
+
+    "icons": {
+        "48": "icons/48.png",
+        "96": "icons/96.png"
+    },
+    "permissions": [
+        "activeTab", "tabs"
+    ],
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": {
+            "48": "icons/48.png",
+            "96": "icons/96.png"
+        },
+        "default_title": "The commenter",
+        "default_popup": "src/commenter.html"
+    },
+    "background": {
+        "scripts": ["./src/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "./src/classes/Observable.js",
+                "./src/classes/ActionsObservable.js",
+                "./src/classes/Builder.js",
+                "./src/interface/InterfaceBuilder.js",
+                "./src/observers/Observer.js",
+                "./src/observers/RedditObserver.js",
+                "./src/observers/HnObserver.js",
+                "./src/commenter.js"
+            ]
+        }
+    ],
+    "applications": {
+        "gecko": {
+            "id": "viorel.sfetea@gmail.com"
+        }
+    }
+}
