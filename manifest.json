@@ -9,7 +9,10 @@
         "96": "icons/96.png"
     },
     "permissions": [
-        "activeTab", "tabs"
+        "activeTab",
+        "tabs",
+        "*://hn.algolia.com/*",
+        "*://www.reddit.com/*"
     ],
     "browser_action": {
         "browser_style": true,
@@ -31,6 +34,8 @@
                 "./src/classes/ActionsObservable.js",
                 "./src/classes/Builder.js",
                 "./src/interface/InterfaceBuilder.js",
+                "./src/interface/Response.js",
+                "./src/interface/Result.js",
                 "./src/observers/Observer.js",
                 "./src/observers/RedditObserver.js",
                 "./src/observers/HnObserver.js",

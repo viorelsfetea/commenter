@@ -2,6 +2,7 @@
 
 class Observable {
     constructor() {
+        this.observers = [];
     }
 
     subscribe() {

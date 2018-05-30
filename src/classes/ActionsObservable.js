@@ -3,7 +3,6 @@
 class ActionsObservable extends Observable {
     constructor() {
         super();
-        this.observers = [];
     }
 
     subscribe(observer) {
