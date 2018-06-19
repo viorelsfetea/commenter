@@ -1,10 +1,21 @@
+const KARMA_WEIGHT_FACTOR = 1;
+const COMMENTS_WEIGHT_FACTOR = 10;
+
 class Result {
-    constructor(url, author, creationDate, totalKarma, totalComments) {
+    constructor(title, url, author, creationDate, totalKarma, totalComments, sourceName, sourceIcon) {
+        this._title = title;
         this._url = url;
         this._author = author;
         this._creationDate = creationDate;
         this._totalKarma = totalKarma;
         this._totalComments = totalComments;
+        this._sourceName = sourceName;
+        this._sourceIcon = sourceIcon;
+        this._weight = (this._totalKarma * KARMA_WEIGHT_FACTOR + this._totalComments * COMMENTS_WEIGHT_FACTOR) / KARMA_WEIGHT_FACTOR + COMMENTS_WEIGHT_FACTOR;
+    }
+
+    get title() {
+        return this._title;
     }
 
     get url() {
@@ -25,5 +36,17 @@ class Result {
 
     get totalComments() {
         return this._totalComments;
+    }
+
+    get sourceName() {
+        return this._sourceName;
+    }
+
+    get sourceIcon() {
+        return this._sourceIcon;
+    }
+
+    get weight() {
+        return this._weight;
     }
 }

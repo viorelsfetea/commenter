@@ -1,6 +1,9 @@
 'use strict';
 
 class Observer {
-    constructor() {}
+    constructor() {
+        this.sourceName = 'Unknown source';
+        this.sourceIcon = '';
+    }
     notify(url, callback) {}
 }

@@ -1,25 +1,26 @@
-const REDDIT_SOURCE_NAME = 'Reddit';
 const REDDIT_SEARCH_URL_FORMAT = 'https://www.reddit.com/api/info.json?url={url}';
 const REDDIT_URL_FORMAT = 'https://www.reddit.com{permalink}';
-const REDDIT_MAX_RESULTS = 5;
 
 class RedditObserver extends Observer {
     constructor() {
         super();
+        this.sourceName = 'Reddit';
+        this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //move this to a local file
     }
 
     notify(url, callback) {
         let successCallback = results => {
-            let response = new Response(REDDIT_SOURCE_NAME, RedditObserver.parseResults(results));
-            callback(response);
+            callback(this.parseResults(results));
         };
 
         this.searchUrl(url, successCallback);
     }
 
     searchUrl(url, successCallback) {
+
         const xmlHttp = new XMLHttpRequest();
         xmlHttp.open('GET', RedditObserver.getFullUrl(url), true);
+        xmlHttp.setRequestHeader('User-Agent', 'Reddit client');
         xmlHttp.send();
 
         xmlHttp.onreadystatechange = () => {
@@ -29,20 +30,19 @@ class RedditObserver extends Observer {
         };
     }
 
-    static parseResults(results) {
-        let response = [];
+    parseResults(results) {
+        if(!results.hasOwnProperty('data') || !results.data.hasOwnProperty('children') || results.data.children.length === 0) return [];
 
-        if(!results.hasOwnProperty('data') || !results.data.hasOwnProperty('children') || results.data.children.length === 0) return response;
-
-        const resultsFiltered = RedditObserver.filterResults(results);
-
-        return resultsFiltered.map(({data}) => {
+        return results.data.children.map(({data}) => {
             return new Result(
+                data.title,
                 RedditObserver.getRedditUrl(data.permalink),
                 data.author,
                 new Date(data.created),
                 data.score,
                 data.num_comments,
+                this.sourceName,
+                this.sourceIcon
             );
         });
     }
@@ -57,19 +57,5 @@ class RedditObserver extends Observer {
 
     static getRedditUrl(permalink) {
         return REDDIT_URL_FORMAT.replace('{permalink}', permalink);
-    }
-
-    static filterResults(results) {
-        if(results.data.children.length <= 1) return results.data.children;
-
-        results = results.data.children.sort((result1, result2) => {
-            if(result1.data.score > result2.data.score) return -1;
-
-            if (result1.data.score < result2.data.score) return 1;
-
-            return 0;
-        });
-
-        return results.slice(0, REDDIT_MAX_RESULTS);
     }
 }

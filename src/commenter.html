@@ -5,9 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="commenter.css"/>
     <title>The commenter</title>
 </head>
 <body>
-    <h1>Sorry, no comments found</h1>
+    <div id="commenter-content">
+        <h1>The <i>commenter</i></h1>
+        <div id="comments">
+            <p id="no-comments">
+                Sorry, I couldn't find any comments for this entry. You should definitely post it yourself.
+            </p>
+            <div id="preloader" class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+    <script src="results.js"></script>
 </body>
 </html>

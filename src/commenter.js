@@ -3,6 +3,9 @@
 const STATUS_COMPLETE = 'complete';
 
 (function() {
+    if (window.hasRun) return;
+    window.hasRun = true;
+
     const observable = new ActionsObservable();
     const interfaceBuilder = new InterfaceBuilder();
 

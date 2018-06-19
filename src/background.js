@@ -10,3 +10,11 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         }
     )
 });
+
+browser.runtime.onMessage.addListener(parseMessage);
+
+function parseMessage(message) {
+    if( message.type === 'updateBadge' ) {
+        browser.browserAction.setBadgeText({text: message.totalCount.toString()});
+    }
+}

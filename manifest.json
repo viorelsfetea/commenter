@@ -34,7 +34,6 @@
                 "./src/classes/ActionsObservable.js",
                 "./src/classes/Builder.js",
                 "./src/interface/InterfaceBuilder.js",
-                "./src/interface/Response.js",
                 "./src/interface/Result.js",
                 "./src/observers/Observer.js",
                 "./src/observers/RedditObserver.js",
