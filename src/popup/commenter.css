@@ -6,6 +6,46 @@
     margin: 5px 0;
 }
 
+#commenter-content #no-comments, #commenter-content #comments-list-container {
+    display: none;
+}
+
+#comments-list {
+    list-style: none;
+    padding: 10px;
+}
+
+#comments-list li {
+    display: block;
+}
+
+#comments-list a {
+    display: block;
+    height: 50px;
+    margin: 0 0 10px 0;
+    text-decoration: none;
+    width: 100%;
+}
+
+#comments-list a:hover {
+    background: #EEE;
+}
+
+#comments-list a img {
+    height: 100%;
+}
+
+#comments-list a span.result-meta {
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+}
+
+#comments-list a span.result-meta span.result-meta-comments {
+    color: #CCC;
+    display: block;
+}
 /**
     http://tobiasahlin.com/spinkit/
 */

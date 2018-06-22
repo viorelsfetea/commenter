@@ -8,12 +8,12 @@ class RedditObserver extends Observer {
         this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //move this to a local file
     }
 
-    notify(url, callback) {
+    notify(tabId, tabUrl, callback) {
         let successCallback = results => {
-            callback(this.parseResults(results));
+            callback(tabId, this.parseResults(results));
         };
 
-        this.searchUrl(url, successCallback);
+        this.searchUrl(tabUrl, successCallback);
     }
 
     searchUrl(url, successCallback) {

@@ -22,8 +22,28 @@
                 <div class="rect4"></div>
                 <div class="rect5"></div>
             </div>
+            <div id="comments-list-container"></div>
         </div>
     </div>
-    <script src="results.js"></script>
+    <script src="../../node_modules/mustache/mustache.min.js"></script>
+    <script src="commenter.js"></script>
+
+    <script id="results-template" type="x-tmpl-mustache">
+        <ul id="comments-list">
+            {{#results}}
+                <li>
+                    <a href="{{_url}}">
+                        <img src="{{_sourceIcon}}" alt="">
+                        <span class="result-meta">
+                            {{_title}}
+                            <span class="result-meta-comments">
+                                {{_totalComments}} comments
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            {{/results}}
+        </ul
+    </script>
 </body>
 </html>

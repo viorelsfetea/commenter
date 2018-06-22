@@ -5,5 +5,6 @@ class Observer {
         this.sourceName = 'Unknown source';
         this.sourceIcon = '';
     }
-    notify(url, callback) {}
+
+    notify(tabId, tabUrl, callback) {}
 }

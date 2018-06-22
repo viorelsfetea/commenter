@@ -11,6 +11,7 @@
     "permissions": [
         "activeTab",
         "tabs",
+        "storage",
         "*://hn.algolia.com/*",
         "*://www.reddit.com/*"
     ],
@@ -21,10 +22,20 @@
             "96": "icons/96.png"
         },
         "default_title": "The commenter",
-        "default_popup": "src/commenter.html"
+        "default_popup": "src/popup/commenter.html"
     },
     "background": {
-        "scripts": ["./src/background.js"]
+        "scripts": [
+            "./src/classes/Observable.js",
+            "./src/classes/ActionsObservable.js",
+            "./src/classes/Builder.js",
+            "./src/interface/ResultsBuilder.js",
+            "./src/interface/Result.js",
+            "./src/observers/Observer.js",
+            "./src/observers/RedditObserver.js",
+            "./src/observers/HnObserver.js",
+            "./src/background.js"
+        ]
     },
     "content_scripts": [
         {

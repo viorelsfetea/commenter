@@ -9,9 +9,9 @@ class ActionsObservable extends Observable {
         this.observers.push(observer);
     }
 
-    notify(url, callback) {
+    notify(tabId, tabUrl, callback) {
         this.observers.forEach((observer) => {
-           observer.notify(url, callback);
+           observer.notify(tabId, tabUrl, callback);
         }, this);
     }
 }

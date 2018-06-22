@@ -8,12 +8,12 @@ class HnObserver extends Observer {
         this.sourceIcon = 'https://news.ycombinator.com/favicon.ico'; //move this to a local file
     }
 
-    notify(url, callback) {
+    notify(tabId, tabUrl, callback) {
         let successCallback = results => {
-            callback(this.parseResults(results));
+            callback(tabId, this.parseResults(results));
         };
 
-        this.searchUrl(url, successCallback);
+        this.searchUrl(tabUrl, successCallback);
     }
 
     searchUrl(url, successCallback) {
