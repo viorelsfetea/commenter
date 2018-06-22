@@ -1,4 +1,5 @@
 'use strict';
+import Observable from './Observable';
 
 class ActionsObservable extends Observable {
     constructor() {
@@ -15,3 +16,5 @@ class ActionsObservable extends Observable {
         }, this);
     }
 }
+
+export default ActionsObservable;

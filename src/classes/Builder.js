@@ -12,3 +12,5 @@ class Builder {
         }, this);
     }
 }
+
+export default Builder;

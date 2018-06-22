@@ -1,8 +1,8 @@
 import {assert} from 'chai';
 
-import Observable from '../src/classes/Observable';
 import Builder from '../src/classes/Builder';
-import Observer from '../src/observers/Observer'
+import Observable from '../src/classes/Observable';
+import Observer from '../src/observers/Observer';
 
 class MockObserver extends Observer {}
 class AnotherMockObserver extends Observer {}

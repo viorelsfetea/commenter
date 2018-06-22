@@ -8,3 +8,5 @@ class Observer {
 
     notify(tabId, tabUrl, callback) {}
 }
+
+export default Observer;

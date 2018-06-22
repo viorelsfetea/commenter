@@ -50,3 +50,5 @@ class Result {
         return this._weight;
     }
 }
+
+export default Result;

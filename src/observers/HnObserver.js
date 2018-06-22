@@ -1,3 +1,5 @@
+import Observer from "./Observer";
+
 const HN_SEARCH_URL_FORMAT = 'https://hn.algolia.com/api/v1/search?query={url}&restrictSearchableAttributes=url';
 const HN_URL_FORMAT = 'https://news.ycombinator.com/item?id={objectID}';
 

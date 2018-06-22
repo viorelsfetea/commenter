@@ -2,13 +2,16 @@
 
 class ResultsBuilder {
     constructor(resultsUpdatedCallback) {
+        if(typeof resultsUpdatedCallback !== 'function')
+            throw Error('ResultsBuilder callback is not a function');
+
         this.results = {};
         this.resultsUpdatedCallback = resultsUpdatedCallback;
     }
 
     appendResults(tabId, results) {
         this.initializeResultsArray(tabId);
-        this.results[tabId] = this.results[tabId].concat(results);
+        this.concatResults(tabId, results);
         this.parseResults(tabId);
         this.resultsUpdatedCallback(tabId);
     }
@@ -22,6 +25,10 @@ class ResultsBuilder {
         });
     }
 
+    concatResults(tabId, results) {
+        this.results[tabId] = this.results[tabId].concat(results);
+    }
+
     initializeResultsArray(tabId) {
         if(!this.results.hasOwnProperty(tabId)) {
             this.results[tabId] = [];
@@ -29,6 +36,9 @@ class ResultsBuilder {
     }
 
     resetResultsForTab(tabId) {
-        delete this.results[tabId];
+        if(this.results.hasOwnProperty(tabId))
+            delete this.results[tabId];
     }
 }
+
+export default ResultsBuilder;

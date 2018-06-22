@@ -11,3 +11,5 @@ class Observable {
     notify() {
     }
 }
+
+export default Observable;
