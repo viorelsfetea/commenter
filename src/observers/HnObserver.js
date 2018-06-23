@@ -1,4 +1,7 @@
-import Observer from "./Observer";
+import axios from 'axios';
+
+import Observer from './Observer';
+import Result from '../data/Result';
 
 const HN_SEARCH_URL_FORMAT = 'https://hn.algolia.com/api/v1/search?query={url}&restrictSearchableAttributes=url';
 const HN_URL_FORMAT = 'https://news.ycombinator.com/item?id={objectID}';
@@ -7,26 +10,24 @@ class HnObserver extends Observer {
     constructor() {
         super();
         this.sourceName = 'HackerNews';
-        this.sourceIcon = 'https://news.ycombinator.com/favicon.ico'; //move this to a local file
+        this.sourceIcon = 'https://news.ycombinator.com/favicon.ico'; //TODO move this to a local file
     }
 
     notify(tabId, tabUrl, callback) {
-        let successCallback = results => {
-            callback(tabId, this.parseResults(results));
-        };
+        return new Promise((resolve, reject) => {
+            axios.get(HnObserver.getFullUrl(tabUrl))
+                .then((response) => {
+                    console.log(response);
+                    if(response.status !== 200)
+                        reject(response.status + ': ' + response.statusText);
 
-        this.searchUrl(tabUrl, successCallback);
-    }
-
-    searchUrl(url, successCallback) {
-        const xmlHttp = new XMLHttpRequest();
-        xmlHttp.open('GET', HnObserver.getFullUrl(url), true);
-        xmlHttp.send();
-
-        xmlHttp.onreadystatechange = () => {
-            if (!HnObserver.isSuccessfulRequest(xmlHttp)) return;
-            successCallback(JSON.parse(xmlHttp.responseText));
-        };
+                    resolve(this.parseResults(response.data));
+                })
+                .catch((error) => {
+                    console.log(error);
+                    reject(error);
+                });
+        });
     }
 
     parseResults(results) {
@@ -46,10 +47,6 @@ class HnObserver extends Observer {
         });
     }
 
-    static isSuccessfulRequest(xmlHttp) {
-        return xmlHttp.readyState === XMLHttpRequest.DONE && xmlHttp.status === 200 && xmlHttp.responseText.length > 0;
-    }
-
     static getFullUrl(url) {
         return HN_SEARCH_URL_FORMAT.replace('{url}', encodeURI(url));
     }
@@ -58,3 +55,5 @@ class HnObserver extends Observer {
         return HN_URL_FORMAT.replace('{objectID}', objectID);
     }
 }
+
+export default HnObserver;

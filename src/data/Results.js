@@ -1,22 +1,29 @@
 'use strict';
 
-class ResultsBuilder {
+class Results {
     constructor(resultsUpdatedCallback) {
         if(typeof resultsUpdatedCallback !== 'function')
-            throw Error('ResultsBuilder callback is not a function');
+            throw Error('Results callback is not a function');
 
         this.results = {};
         this.resultsUpdatedCallback = resultsUpdatedCallback;
     }
 
-    appendResults(tabId, results) {
+    getResults(tabId) {
+        if(!this.results.hasOwnProperty(tabId))
+            throw Error('No results found for #' + tabId + ' tab id');
+
+        return this.results[tabId];
+    }
+
+    append(tabId, results) {
         this.initializeResultsArray(tabId);
-        this.concatResults(tabId, results);
-        this.parseResults(tabId);
+        this.concat(tabId, results);
+        this.parse(tabId);
         this.resultsUpdatedCallback(tabId);
     }
 
-    parseResults(tabId) {
+    parse(tabId) {
         this.results[tabId] = this.results[tabId].sort((result1, result2) => {
             if (result1.weight > result2.weight) return -1;
             if (result1.weight < result2.weight) return 1;
@@ -25,7 +32,7 @@ class ResultsBuilder {
         });
     }
 
-    concatResults(tabId, results) {
+    concat(tabId, results) {
         this.results[tabId] = this.results[tabId].concat(results);
     }
 
@@ -41,4 +48,4 @@ class ResultsBuilder {
     }
 }
 
-export default ResultsBuilder;
+export default Results;

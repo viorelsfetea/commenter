@@ -1,4 +1,5 @@
 "use strict";
+import Results from './data/Results';
 
 const STATUS_COMPLETE = 'complete';
 const observable = new ActionsObservable();
@@ -7,13 +8,13 @@ function resultsUpdatedCallback(tabId) {
     browser.runtime.sendMessage({
         type: 'resultsUpdated',
         tabId: tabId,
-        results: resultsBuilder.results[tabId]
+        results: results.results[tabId]
     });
 
-    browser.browserAction.setBadgeText({tabId: tabId, text: resultsBuilder.results[tabId].length.toString()});
+    browser.browserAction.setBadgeText({tabId: tabId, text: results.results[tabId].length.toString()});
 }
 
-const resultsBuilder = new ResultsBuilder(resultsUpdatedCallback);
+const results = new Results(resultsUpdatedCallback);
 
 browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if(changeInfo.hasOwnProperty('status') && changeInfo.status === STATUS_COMPLETE) {
@@ -24,8 +25,8 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 function searchForUrl(tabId, tabUrl) {
     const builder = new Builder(observable, [HnObserver, RedditObserver]);
     builder.build();
-    resultsBuilder.resetResultsForTab(tabId);
-    observable.notify(tabId, tabUrl, resultsBuilder.appendResults.bind(resultsBuilder));
+    results.resetResultsForTab(tabId);
+    observable.notify(tabId, tabUrl, results.append.bind(results));
 }
 
 browser.runtime.onMessage.addListener(parseMessage);
@@ -37,11 +38,11 @@ function parseMessage(message) {
     }
 
     if( message.type === 'getResults' ) {
-        if(resultsBuilder.results.hasOwnProperty(message.tabId)) {
+        if(results.results.hasOwnProperty(message.tabId)) {
             browser.runtime.sendMessage({
                 type: 'resultsUpdated',
                 tabId: message.tabId,
-                results: resultsBuilder.results[message.tabId]
+                results: results.results[message.tabId]
             });
         }
     }
