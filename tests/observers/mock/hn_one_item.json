@@ -1,0 +1,55 @@
+{
+    "hits": [
+        {
+            "created_at": "2018-06-25T07:21:46.000Z",
+            "title": "The best developer videos in one place",
+            "url": "https://dev.tube/",
+            "author": "haasted",
+            "points": 301,
+            "story_text": null,
+            "comment_text": null,
+            "num_comments": 93,
+            "story_id": null,
+            "story_title": null,
+            "story_url": null,
+            "parent_id": null,
+            "created_at_i": 1529911306,
+            "_tags": [
+                "story",
+                "author_haasted",
+                "story_17390527",
+                "front_page"
+            ],
+            "objectID": "17390527",
+            "_highlightResult": {
+                "title": {
+                    "value": "The best developer videos in one place",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                },
+                "url": {
+                    "value": "<em>https</em>://<em>dev.tube</em>/",
+                    "matchLevel": "full",
+                    "fullyHighlighted": true,
+                    "matchedWords": [
+                        "https",
+                        "devtube"
+                    ]
+                },
+                "author": {
+                    "value": "haasted",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                }
+            }
+        }
+    ],
+    "nbHits": 1,
+    "page": 0,
+    "nbPages": 1,
+    "hitsPerPage": 20,
+    "processingTimeMS": 3,
+    "exhaustiveNbHits": true,
+    "query": "https://dev.tube/",
+    "params": "advancedSyntax=true&analytics=false&query=https%3A%2F%2Fdev.tube%2F&restrictSearchableAttributes=url"
+}

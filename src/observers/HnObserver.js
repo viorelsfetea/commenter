@@ -17,14 +17,12 @@ class HnObserver extends Observer {
         return new Promise((resolve, reject) => {
             axios.get(HnObserver.getFullUrl(tabUrl))
                 .then((response) => {
-                    console.log(response);
                     if(response.status !== 200)
                         reject(response.status + ': ' + response.statusText);
 
                     resolve(this.parseResults(response.data));
                 })
                 .catch((error) => {
-                    console.log(error);
                     reject(error);
                 });
         });
@@ -38,7 +36,7 @@ class HnObserver extends Observer {
                 result.title,
                 HnObserver.getHNUrl(result.objectID),
                 result.author,
-                new Date(result.created_at_i),
+                new Date(result.created_at),
                 result.points,
                 result.num_comments,
                 this.sourceName,

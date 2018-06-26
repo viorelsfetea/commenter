@@ -1,0 +1,11 @@
+{
+    "hits": [],
+    "nbHits": 0,
+    "page": 0,
+    "nbPages": 0,
+    "hitsPerPage": 20,
+    "processingTimeMS": 2,
+    "exhaustiveNbHits": true,
+    "query": "https://google.com/",
+    "params": "advancedSyntax=true&analytics=false&query=https%3A%2F%2Fgooglsdadaae.com%2F&restrictSearchableAttributes=url"
+}

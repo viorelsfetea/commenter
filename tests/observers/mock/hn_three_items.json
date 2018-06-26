@@ -1,0 +1,138 @@
+{
+    "hits": [
+        {
+            "created_at": "2017-12-14T00:54:14.000Z",
+            "title": "Machine Learning 101 slidedeck: 2 years of headbanging, so you don't have to",
+            "url": "https://docs.google.com/presentation/d/1kSuQyW5DTnkVaZEjGYCkfOxvzCqGEFzWBy4e9Uedd9k/preview?imm_mid=0f9b7e&cmp=em-data-na-na-newsltr_20171213&slide=id.g183f28bdc3_0_90",
+            "author": "flor1s",
+            "points": 1656,
+            "story_text": null,
+            "comment_text": null,
+            "num_comments": 120,
+            "story_id": null,
+            "story_title": null,
+            "story_url": null,
+            "parent_id": null,
+            "created_at_i": 1513212854,
+            "_tags": [
+                "story",
+                "author_flor1s",
+                "story_15919115"
+            ],
+            "objectID": "15919115",
+            "_highlightResult": {
+                "title": {
+                    "value": "Machine Learning 101 slidedeck: 2 years of headbanging, so you don't have to",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                },
+                "url": {
+                    "value": "<em>https</em>://docs.<em>google.com</em>/presentation/d/1kSuQyW5DTnkVaZEjGYCkfOxvzCqGEFzWBy4e9Uedd9k/preview?imm_mid=0f9b7e&cmp=em-data-na-na-newsltr_20171213&slide=id.g183f28bdc3_0_90",
+                    "matchLevel": "full",
+                    "fullyHighlighted": false,
+                    "matchedWords": [
+                        "https",
+                        "googlecom"
+                    ]
+                },
+                "author": {
+                    "value": "flor1s",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                }
+            }
+        },
+        {
+            "created_at": "2014-01-19T22:46:05.000Z",
+            "title": "Wozniak: “Actually, the movie was largely a lie about me”",
+            "url": "https://plus.google.com/+CarmsPerez/posts/GnVTvQNgvpf",
+            "author": "jamesbritt",
+            "points": 1522,
+            "story_text": null,
+            "comment_text": null,
+            "num_comments": 308,
+            "story_id": null,
+            "story_title": null,
+            "story_url": null,
+            "parent_id": null,
+            "created_at_i": 1390171565,
+            "_tags": [
+                "story",
+                "author_jamesbritt",
+                "story_7086411"
+            ],
+            "objectID": "7086411",
+            "_highlightResult": {
+                "title": {
+                    "value": "Wozniak: “Actually, the movie was largely a lie about me”",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                },
+                "url": {
+                    "value": "<em>https</em>://plus.<em>google.com</em>/+CarmsPerez/posts/GnVTvQNgvpf",
+                    "matchLevel": "full",
+                    "fullyHighlighted": false,
+                    "matchedWords": [
+                        "https",
+                        "googlecom"
+                    ]
+                },
+                "author": {
+                    "value": "jamesbritt",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                }
+            }
+        },
+        {
+            "created_at": "2016-10-06T17:51:13.000Z",
+            "title": "Google Noto Fonts",
+            "url": "https://www.google.com/get/noto/",
+            "author": "bpierre",
+            "points": 1217,
+            "story_text": null,
+            "comment_text": null,
+            "num_comments": 304,
+            "story_id": null,
+            "story_title": null,
+            "story_url": null,
+            "parent_id": null,
+            "created_at_i": 1475776273,
+            "_tags": [
+                "story",
+                "author_bpierre",
+                "story_12654499"
+            ],
+            "objectID": "12654499",
+            "_highlightResult": {
+                "title": {
+                    "value": "Google Noto Fonts",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                },
+                "url": {
+                    "value": "<em>https</em>://www.<em>google.com</em>/get/noto/",
+                    "matchLevel": "full",
+                    "fullyHighlighted": false,
+                    "matchedWords": [
+                        "https",
+                        "googlecom"
+                    ]
+                },
+                "author": {
+                    "value": "bpierre",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                }
+            }
+        }
+    ],
+    "nbHits": 3,
+    "page": 0,
+    "nbPages": 1,
+    "hitsPerPage": 20,
+    "processingTimeMS": 3,
+    "exhaustiveNbHits": true,
+    "query": "https://dev.tube/",
+    "params": "advancedSyntax=true&analytics=false&query=https%3A%2F%2Fdev.tube%2F&restrictSearchableAttributes=url"
+}

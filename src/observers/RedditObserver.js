@@ -59,3 +59,5 @@ class RedditObserver extends Observer {
         return REDDIT_URL_FORMAT.replace('{permalink}', permalink);
     }
 }
+
+export default RedditObserver;

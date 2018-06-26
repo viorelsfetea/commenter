@@ -4,9 +4,9 @@ import path  from 'path';
 import {assert} from 'chai';
 import moxios from 'moxios'
 
-import HnObserver from '../../src/observers/HnObserver';
+import RedditObserver from '../../src/observers/RedditObserver';
 
-describe("HackerNews Observer Suite", function() {
+describe("Reddit Observer Suite", function() {
     const verifyResultItem = function(actual, expected) {
         assert.equal(actual.constructor.name, expected.constructor);
         assert.equal(actual.title, expected.title);
@@ -28,7 +28,7 @@ describe("HackerNews Observer Suite", function() {
     });
 
     it("makes a successful HTTP request with no results", function(done) {
-        const observer = new HnObserver();
+        const observer = new RedditObserver();
         const tabId = 1;
 
         observer.notify(tabId, 'https://google.com').then(results => {
@@ -47,9 +47,9 @@ describe("HackerNews Observer Suite", function() {
             });
         });
     });
-
+/*
     it("makes a successful HTTP request with one result", function(done) {
-        const observer = new HnObserver();
+        const observer = new RedditObserver();
         const tabId = 1;
 
         observer.notify(tabId, 'https://dev.tube').then(results => {
@@ -68,7 +68,7 @@ describe("HackerNews Observer Suite", function() {
 
             done();
         })
-        .catch(done);
+            .catch(done);
 
         moxios.wait(() => {
             let request = moxios.requests.mostRecent();
@@ -81,7 +81,7 @@ describe("HackerNews Observer Suite", function() {
     });
 
     it("makes a successful HTTP request with three results", function(done) {
-        const observer = new HnObserver();
+        const observer = new RedditObserver();
         const tabId = 2;
 
         observer.notify(tabId, 'https://google.com').then(results => {
@@ -138,7 +138,7 @@ describe("HackerNews Observer Suite", function() {
     });
 
     it("makes an unsuccessful HTTP request", function(done) {
-        const observer = new HnObserver();
+        const observer = new RedditObserver();
         const tabId = 3;
 
         observer.notify(tabId, 'https://google.com').then(done)
@@ -158,6 +158,6 @@ describe("HackerNews Observer Suite", function() {
                 response: {}
             });
         });
-    });
+    });*/
 });
 
