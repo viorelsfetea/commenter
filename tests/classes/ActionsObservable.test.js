@@ -1,7 +1,7 @@
 import {assert} from 'chai';
 
-import ActionsObservable from '../src/classes/ActionsObservable';
-import Observer from "../src/observers/Observer";
+import ActionsObservable from '../../src/classes/ActionsObservable';
+import Observer from "../../src/observers/Observer";
 
 class MockObserverOne extends Observer {
     constructor() {

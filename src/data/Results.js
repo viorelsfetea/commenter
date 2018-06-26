@@ -9,11 +9,15 @@ class Results {
         this.resultsUpdatedCallback = resultsUpdatedCallback;
     }
 
-    getResults(tabId) {
+    getResultsForTab(tabId) {
         if(!this.results.hasOwnProperty(tabId))
             throw Error('No results found for #' + tabId + ' tab id');
 
         return this.results[tabId];
+    }
+
+    hasResultsForTab(tabId) {
+        return this.results.hasOwnProperty(tabId);
     }
 
     append(tabId, results) {

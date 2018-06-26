@@ -1,31 +1,37 @@
 import Results from './data/Results';
 import ActionsObservable from "./classes/ActionsObservable";
 import Builder from "./classes/Builder";
-import HnObserver from "./observers/HnObserver";
-import RedditObserver from "./observers/RedditObserver";
-
-const STATUS_COMPLETE = 'complete';
 
 class App {
     constructor() {
         this.results = new Results(this.resultsUpdatedCallback.bind(this));
         this.observable = new ActionsObservable();
+        this.STATUS_COMPLETE = 'complete';
     }
 
-    init() {
-        const builder = new Builder(this.observable, [HnObserver, RedditObserver]);
-        builder.build();
-
+    init(observers) {
+        this.initObservers(observers);
         this.initListeners();
     }
 
+    initObservers(observers) {
+        new Builder(this.observable, observers).build();
+    }
+
     initListeners() {
+        this.listenForTabUrlChange();
+        this.listenForExternalMessages();
+    }
+
+    listenForTabUrlChange() {
         browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-            if(!App.isTabUrlChanged(changeInfo)) return;
+            if(!this.isTabUrlChanged(changeInfo)) return;
 
-            this.searchForUrl(tab.id, tab.url);
+            this.searchForUrl(tabId, tab.url);
         });
+    }
 
+    listenForExternalMessages() {
         browser.runtime.onMessage.addListener(this.parseMessage.bind(this));
     }
 
@@ -35,25 +41,42 @@ class App {
     }
 
     resultsUpdatedCallback(tabId) {
-        browser.runtime.sendMessage({type: 'resultsUpdated', tabId: tabId, results: this.results.getResults(tabId)});
+        this.notifyResultsUpdated(tabId);
+        this.updateBadgeText(tabId);
+    }
 
-        browser.browserAction.setBadgeText({tabId: tabId, text: this.results.getResults(tabId).length.toString()});
+    notifyResultsUpdated(tabId) {
+        browser.runtime.sendMessage({
+            type: 'resultsUpdated',
+            tabId: tabId,
+            results: this.results.getResultsForTab(tabId)
+        }).catch(App.logError);
+    }
+
+    updateBadgeText(tabId) {
+        browser.browserAction.setBadgeText({
+            tabId: tabId,
+            text: this.results.getResultsForTab(tabId).length.toString()
+        }).catch(App.logError);
     }
 
     parseMessage(message) {
-        if( message.type === 'getResults' && this.results.getResults.hasOwnProperty(message.tabId)) {
+        if( message.type === 'getResultsForTab' && this.results.hasResultsForTab(message.tabId)) {
             browser.runtime.sendMessage({
                 type: 'resultsUpdated',
                 tabId: message.tabId,
-                results: this.results.getResults(message.tabId)
-            });
+                results: this.results.getResultsForTab(message.tabId)
+            }).catch(App.logError);
         }
     }
 
-    static isTabUrlChanged(changeInfo) {
-        return changeInfo.hasOwnProperty('status') && changeInfo.status === STATUS_COMPLETE;
+    isTabUrlChanged(changeInfo) {
+        return changeInfo.hasOwnProperty('status') && changeInfo.status === this.STATUS_COMPLETE;
     }
 
+    static logError(error) {
+        console.error(error);
+    }
 }
 
 export default App;

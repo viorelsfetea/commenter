@@ -12,7 +12,7 @@ browser.tabs.query({active: true, windowId: browser.windows.WINDOW_ID_CURRENT})
 
 function requestResults(tabId) {
     browser.runtime.sendMessage({
-        type: 'getResults',
+        type: 'getResultsForTab',
         tabId: tabId
     });
 }

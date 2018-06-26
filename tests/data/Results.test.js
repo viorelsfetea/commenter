@@ -1,7 +1,7 @@
 import {assert, expect} from 'chai';
 
-import Results from '../src/data/Results';
-import Result from "../src/data/Result";
+import Results from '../../src/data/Results';
+import Result from "../../src/data/Result";
 
 describe("Results Builder Suite", function() {
     it("builds the results builder correctly", function() {
@@ -40,7 +40,7 @@ describe("Results Builder Suite", function() {
         const results = new Results(callback);
 
         expect(function() {
-            results.getResults(123);
+            results.getResultsForTab(123);
         }).to.throw('No results found for #123 tab id');
     });
 
@@ -52,7 +52,7 @@ describe("Results Builder Suite", function() {
 
         results.results[tabId] = [1, 2, 3];
 
-        assert.deepEqual(results.getResults(tabId), [1, 2, 3])
+        assert.deepEqual(results.getResultsForTab(tabId), [1, 2, 3])
     });
 
     it("initializes tab results array when it doesn't exist", function () {
