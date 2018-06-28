@@ -13,7 +13,7 @@ class HnObserver extends Observer {
         this.sourceIcon = 'https://news.ycombinator.com/favicon.ico'; //TODO move this to a local file
     }
 
-    notify(tabId, tabUrl, callback) {
+    notify(tabId, tabUrl) {
         return new Promise((resolve, reject) => {
             axios.get(HnObserver.getFullUrl(tabUrl))
                 .then((response) => {

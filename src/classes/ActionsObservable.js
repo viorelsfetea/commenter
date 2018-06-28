@@ -12,7 +12,11 @@ class ActionsObservable extends Observable {
 
     notify(tabId, tabUrl, callback) {
         this.observers.forEach((observer) => {
-           observer.notify(tabId, tabUrl, callback);
+           observer.notify(tabId, tabUrl)
+               .then((results) => {
+                    callback(tabId, results);
+               })
+               .catch(console.error);
         }, this);
     }
 }

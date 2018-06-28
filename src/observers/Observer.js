@@ -6,7 +6,7 @@ class Observer {
         this.sourceIcon = '';
     }
 
-    notify(tabId, tabUrl, callback) {}
+    notify(tabId, tabUrl) {}
 }
 
 export default Observer;

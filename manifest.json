@@ -26,33 +26,9 @@
     },
     "background": {
         "scripts": [
-            "./src/classes/Observable.js",
-            "./src/classes/ActionsObservable.js",
-            "./src/classes/Builder.js",
-            "./src/interface/ResultsBuilder.js",
-            "./src/interface/Result.js",
-            "./src/observers/Observer.js",
-            "./src/observers/RedditObserver.js",
-            "./src/observers/HnObserver.js",
-            "./src/background.js"
+            "./dist/bundle.js"
         ]
     },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": [
-                "./src/classes/Observable.js",
-                "./src/classes/ActionsObservable.js",
-                "./src/classes/Builder.js",
-                "./src/interface/InterfaceBuilder.js",
-                "./src/interface/Result.js",
-                "./src/observers/Observer.js",
-                "./src/observers/RedditObserver.js",
-                "./src/observers/HnObserver.js",
-                "./src/commenter.js"
-            ]
-        }
-    ],
     "applications": {
         "gecko": {
             "id": "viorel.sfetea@gmail.com"

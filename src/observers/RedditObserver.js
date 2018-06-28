@@ -1,3 +1,5 @@
+import Observer from './Observer';
+
 const REDDIT_SEARCH_URL_FORMAT = 'https://www.reddit.com/api/info.json?url={url}';
 const REDDIT_URL_FORMAT = 'https://www.reddit.com{permalink}';
 
