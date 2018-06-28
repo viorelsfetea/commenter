@@ -22,9 +22,7 @@ class HnObserver extends Observer {
 
                     resolve(this.parseResults(response.data));
                 })
-                .catch((error) => {
-                    reject(error);
-                });
+                .catch(reject);
         });
     }
 
@@ -46,7 +44,7 @@ class HnObserver extends Observer {
     }
 
     static getFullUrl(url) {
-        return HN_SEARCH_URL_FORMAT.replace('{url}', encodeURI(url));
+        return HN_SEARCH_URL_FORMAT.replace('{url}', escape(url));
     }
 
     static getHNUrl(objectID) {

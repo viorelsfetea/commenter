@@ -15,16 +15,13 @@
     padding: 10px;
 }
 
-#comments-list li {
-    display: block;
-}
-
 #comments-list a {
-    display: block;
+    display: flex;
+    align-items: flex-start;
     height: 50px;
     margin: 0 0 10px 0;
     text-decoration: none;
-    width: 100%;
+    width: 400px;
 }
 
 #comments-list a:hover {
@@ -32,14 +29,17 @@
 }
 
 #comments-list a img {
-    height: 100%;
+    height: 50%;
+    margin: 0 10px 0 0;
 }
 
 #comments-list a span.result-meta {
     color: #000;
     display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
     vertical-align: top;
-    width: 80%;
+    width: 70%;
 }
 
 #comments-list a span.result-meta span.result-meta-comments {

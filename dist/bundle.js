@@ -2529,9 +2529,7 @@ var HnObserver = function (_Observer) {
                     if (response.status !== 200) reject(response.status + ': ' + response.statusText);
 
                     resolve(_this2.parseResults(response.data));
-                }).catch(function (error) {
-                    reject(error);
-                });
+                }).catch(reject);
             });
         }
     }, {
@@ -2548,7 +2546,7 @@ var HnObserver = function (_Observer) {
     }], [{
         key: 'getFullUrl',
         value: function getFullUrl(url) {
-            return HN_SEARCH_URL_FORMAT.replace('{url}', encodeURI(url));
+            return HN_SEARCH_URL_FORMAT.replace('{url}', escape(url));
         }
     }, {
         key: 'getHNUrl',
@@ -2620,6 +2618,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
 var _Observer2 = __webpack_require__(/*! ./Observer */ "./src/observers/Observer.js");
 
 var _Observer3 = _interopRequireDefault(_Observer2);
@@ -2644,7 +2646,7 @@ var RedditObserver = function (_Observer) {
         var _this = _possibleConstructorReturn(this, (RedditObserver.__proto__ || Object.getPrototypeOf(RedditObserver)).call(this));
 
         _this.sourceName = 'Reddit';
-        _this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //move this to a local file
+        _this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //TODO: move this to a local file
         return _this;
     }
 
@@ -2653,11 +2655,13 @@ var RedditObserver = function (_Observer) {
         value: function notify(tabId, tabUrl, callback) {
             var _this2 = this;
 
-            var successCallback = function successCallback(results) {
-                callback(tabId, _this2.parseResults(results));
-            };
+            return new Promise(function (resolve, reject) {
+                _axios2.default.get(RedditObserver.getFullUrl(tabUrl)).then(function (response) {
+                    if (response.status !== 200) reject(response.status + ': ' + response.statusText);
 
-            this.searchUrl(tabUrl, successCallback);
+                    resolve(_this2.parseResults(response.data));
+                }).catch(reject);
+            });
         }
     }, {
         key: 'searchUrl',

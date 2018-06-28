@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import Observer from './Observer';
 
 const REDDIT_SEARCH_URL_FORMAT = 'https://www.reddit.com/api/info.json?url={url}';
@@ -7,15 +9,19 @@ class RedditObserver extends Observer {
     constructor() {
         super();
         this.sourceName = 'Reddit';
-        this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //move this to a local file
+        this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //TODO: move this to a local file
     }
 
-    notify(tabId, tabUrl, callback) {
-        let successCallback = results => {
-            callback(tabId, this.parseResults(results));
-        };
+    notify(tabId, tabUrl, callback) {return new Promise((resolve, reject) => {
+        axios.get(RedditObserver.getFullUrl(tabUrl))
+            .then((response) => {
+                if(response.status !== 200)
+                    reject(response.status + ': ' + response.statusText);
 
-        this.searchUrl(tabUrl, successCallback);
+                resolve(this.parseResults(response.data));
+            })
+            .catch(reject);
+    });
     }
 
     searchUrl(url, successCallback) {
