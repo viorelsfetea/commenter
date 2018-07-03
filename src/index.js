@@ -5,4 +5,4 @@ import RedditObserver from "./observers/RedditObserver";
 import App from './App';
 
 const app = new App();
-app.init([HnObserver/*, RedditObserver*/]);
+app.init([HnObserver, RedditObserver]);

@@ -21,6 +21,6 @@
         "webpack-cli": "^3.0.8"
     },
     "scripts": {
-        "test": "mocha --require babel-register tests/App.test.js"
+        "test": "mocha --require babel-register tests/observers/RedditObserver.test.js"
     }
 }

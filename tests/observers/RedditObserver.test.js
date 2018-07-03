@@ -40,30 +40,30 @@ describe("Reddit Observer Suite", function() {
 
         moxios.wait(() => {
             let request = moxios.requests.mostRecent();
-            let response = fs.readFileSync(path.join(__dirname, 'mock/hn_no_items.json'), 'utf8');
+            let response = fs.readFileSync(path.join(__dirname, 'mock/reddit_no_items.json'), 'utf8');
             request.respondWith({
                 status: 200,
                 response: JSON.parse(response)
             });
         });
     });
-/*
+
     it("makes a successful HTTP request with one result", function(done) {
         const observer = new RedditObserver();
         const tabId = 1;
 
-        observer.notify(tabId, 'https://dev.tube').then(results => {
+        observer.notify(tabId, 'github.com').then(results => {
             assert.equal(results.length, 1);
             verifyResultItem(results[0], {
                 constructor: 'Result',
-                title: 'The best developer videos in one place',
-                url: 'https://news.ycombinator.com/item?id=17390527',
-                author: 'haasted',
-                creationDate: new Date('2018-06-25T07:21:46.000Z'),
-                totalKarma: 301,
-                totalComments: 93,
-                sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
+                title: 'Termtosvg – Record terminal sessions as SVG animations',
+                url: 'https://www.reddit.com/r/bprogramming/comments/8vsfwj/termtosvg_record_terminal_sessions_as_svg/',
+                author: 'bprogramming',
+                creationDate: new Date('Tue, 03 Jul 2018 22:03:46 GMT'),
+                totalKarma: 1,
+                totalComments: 0,
+                sourceName: 'Reddit',
+                sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
             });
 
             done();
@@ -72,7 +72,7 @@ describe("Reddit Observer Suite", function() {
 
         moxios.wait(() => {
             let request = moxios.requests.mostRecent();
-            let response = fs.readFileSync(path.join(__dirname, 'mock/hn_one_item.json'), 'utf8');
+            let response = fs.readFileSync(path.join(__dirname, 'mock/reddit_one_item.json'), 'utf8');
             request.respondWith({
                 status: 200,
                 response: JSON.parse(response)
@@ -80,84 +80,83 @@ describe("Reddit Observer Suite", function() {
         });
     });
 
-    it("makes a successful HTTP request with three results", function(done) {
-        const observer = new RedditObserver();
-        const tabId = 2;
+        it("makes a successful HTTP request with three results", function(done) {
+            const observer = new RedditObserver();
+            const tabId = 2;
 
-        observer.notify(tabId, 'https://google.com').then(results => {
-            assert.equal(results.length, 3);
+            observer.notify(tabId, 'https://google.com').then(results => {
+                assert.equal(results.length, 3);
 
-            verifyResultItem(results[0], {
-                constructor: 'Result',
-                title: 'Machine Learning 101 slidedeck: 2 years of headbanging, so you don\'t have to',
-                url: 'https://news.ycombinator.com/item?id=15919115',
-                author: 'flor1s',
-                creationDate: new Date('2017-12-14T00:54:14.000Z'),
-                totalKarma: 1656,
-                totalComments: 120,
-                sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
-            });
+                verifyResultItem(results[0], {
+                    constructor: 'Result',
+                    title: 'Termtosvg – Record terminal sessions as SVG animations',
+                    url: 'https://www.reddit.com/r/bprogramming/comments/8vsfwj/termtosvg_record_terminal_sessions_as_svg/',
+                    author: 'bprogramming',
+                    creationDate: new Date('Tue, 03 Jul 2018 22:03:46 GMT'),
+                    totalKarma: 1,
+                    totalComments: 0,
+                    sourceName: 'Reddit',
+                    sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
+                });
 
-            verifyResultItem(results[1], {
-                constructor: 'Result',
-                title: 'Wozniak: “Actually, the movie was largely a lie about me”',
-                url: 'https://news.ycombinator.com/item?id=7086411',
-                author: 'jamesbritt',
-                creationDate: new Date('2014-01-19T22:46:05.000Z'),
-                totalKarma: 1522,
-                totalComments: 308,
-                sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
-            });
+                verifyResultItem(results[1], {
+                    constructor: 'Result',
+                    title: 'Terminal session to SVG',
+                    url: 'https://www.reddit.com/r/Python/comments/8uvbcl/terminal_session_to_svg/',
+                    author: 'IT4ddict',
+                    creationDate: new Date('Sat, 30 Jun 2018 02:10:40 GMT'),
+                    totalKarma: 55,
+                    totalComments: 12,
+                    sourceName: 'Reddit',
+                    sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
+                });
 
-            verifyResultItem(results[2], {
-                constructor: 'Result',
-                title: 'Google Noto Fonts',
-                url: 'https://news.ycombinator.com/item?id=12654499',
-                author: 'bpierre',
-                creationDate: new Date('2016-10-06T17:51:13.000Z'),
-                totalKarma: 1217,
-                totalComments: 304,
-                sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
-            });
+                verifyResultItem(results[2], {
+                    constructor: 'Result',
+                    title: 'termtosvg - Record terminal sessions as SVG animations',
+                    url: 'https://www.reddit.com/r/commandline/comments/8tkf95/termtosvg_record_terminal_sessions_as_svg/',
+                    author: 'NervousScentedEagle',
+                    creationDate: new Date('Mon, 25 Jun 2018 03:59:57 GMT'),
+                    totalKarma: 134,
+                    totalComments: 9,
+                    sourceName: 'Reddit',
+                    sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
+                });
 
-            done();
-        })
-            .catch(done);
-
-        moxios.wait(() => {
-            let request = moxios.requests.mostRecent();
-            let response = fs.readFileSync(path.join(__dirname, 'mock/hn_three_items.json'), 'utf8');
-            request.respondWith({
-                status: 200,
-                response: JSON.parse(response)
-            });
-        });
-    });
-
-    it("makes an unsuccessful HTTP request", function(done) {
-        const observer = new RedditObserver();
-        const tabId = 3;
-
-        observer.notify(tabId, 'https://google.com').then(done)
-            .catch((error) => {
-                assert.equal(error.response.status, 503);
-                assert.equal(error.response.statusText, 'Forbidden 503');
                 done();
             })
-            .catch(done);
+                .catch(done);
 
-        moxios.wait(() => {
-            let request = moxios.requests.mostRecent();
-
-            request.respondWith({
-                status: 503,
-                statusText: 'Forbidden 503',
-                response: {}
+            moxios.wait(() => {
+                let request = moxios.requests.mostRecent();
+                let response = fs.readFileSync(path.join(__dirname, 'mock/reddit_three_items.json'), 'utf8');
+                request.respondWith({
+                    status: 200,
+                    response: JSON.parse(response)
+                });
             });
         });
-    });*/
+        it("makes an unsuccessful HTTP request", function(done) {
+            const observer = new RedditObserver();
+            const tabId = 3;
+
+            observer.notify(tabId, 'https://google.com').then(done)
+                .catch((error) => {
+                    assert.equal(error.response.status, 503);
+                    assert.equal(error.response.statusText, 'Forbidden 503');
+                    done();
+                })
+                .catch(done);
+
+            moxios.wait(() => {
+                let request = moxios.requests.mostRecent();
+
+                request.respondWith({
+                    status: 503,
+                    statusText: 'Forbidden 503',
+                    response: {}
+                });
+            });
+        });
 });
 

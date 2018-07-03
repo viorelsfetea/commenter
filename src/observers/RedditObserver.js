@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import Observer from './Observer';
+import Result from '../data/Result';
 
 const REDDIT_SEARCH_URL_FORMAT = 'https://www.reddit.com/api/info.json?url={url}';
 const REDDIT_URL_FORMAT = 'https://www.reddit.com{permalink}';
@@ -46,7 +47,7 @@ class RedditObserver extends Observer {
                 data.title,
                 RedditObserver.getRedditUrl(data.permalink),
                 data.author,
-                new Date(data.created),
+                new Date(data.created * 1000),
                 data.score,
                 data.num_comments,
                 this.sourceName,

@@ -1,0 +1,137 @@
+{
+    "kind": "Listing",
+    "data": {
+        "modhash": "",
+        "dist": 1,
+        "children": [
+            {
+                "kind": "t3",
+                "data": {
+                    "approved_at_utc": null,
+                    "subreddit": "bprogramming",
+                    "selftext": "",
+                    "user_reports": [],
+                    "saved": false,
+                    "mod_reason_title": null,
+                    "gilded": 0,
+                    "clicked": false,
+                    "title": "Termtosvg – Record terminal sessions as SVG animations",
+                    "link_flair_richtext": [],
+                    "subreddit_name_prefixed": "r/bprogramming",
+                    "hidden": false,
+                    "pwls": null,
+                    "link_flair_css_class": null,
+                    "downs": 0,
+                    "thumbnail_height": 140,
+                    "parent_whitelist_status": null,
+                    "hide_score": true,
+                    "name": "t3_8vsfwj",
+                    "quarantine": false,
+                    "link_flair_text_color": "dark",
+                    "author_flair_background_color": null,
+                    "subreddit_type": "public",
+                    "ups": 1,
+                    "domain": "github.com",
+                    "media_embed": {},
+                    "thumbnail_width": 140,
+                    "author_flair_template_id": null,
+                    "is_original_content": false,
+                    "secure_media": null,
+                    "is_reddit_media_domain": false,
+                    "category": null,
+                    "secure_media_embed": {},
+                    "link_flair_text": null,
+                    "can_mod_post": false,
+                    "score": 1,
+                    "approved_by": null,
+                    "thumbnail": "https://a.thumbs.redditmedia.com/0WPHHKly2aBNt74LrwpVxPNShUguYwMEXDFfei32Rw4.jpg",
+                    "edited": false,
+                    "author_flair_css_class": null,
+                    "author_flair_richtext": [],
+                    "post_hint": "link",
+                    "content_categories": null,
+                    "is_self": false,
+                    "mod_note": null,
+                    "created": 1530655426,
+                    "link_flair_type": "text",
+                    "wls": null,
+                    "post_categories": null,
+                    "banned_by": null,
+                    "author_flair_type": "text",
+                    "contest_mode": false,
+                    "selftext_html": null,
+                    "likes": null,
+                    "suggested_sort": null,
+                    "banned_at_utc": null,
+                    "view_count": null,
+                    "archived": false,
+                    "no_follow": true,
+                    "is_crosspostable": false,
+                    "pinned": false,
+                    "over_18": false,
+                    "preview": {
+                        "images": [
+                            {
+                                "source": {
+                                    "url": "https://i.redditmedia.com/EzL1D8Rt1RoxRZbRW4bxyru2z5_hm-0EcCOlo6pXDts.jpg?s=4ab27c8981dd3d6dcc670a36df4601a0",
+                                    "width": 400,
+                                    "height": 400
+                                },
+                                "resolutions": [
+                                    {
+                                        "url": "https://i.redditmedia.com/EzL1D8Rt1RoxRZbRW4bxyru2z5_hm-0EcCOlo6pXDts.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=bbd78557ffa84a70d028b67144464e5a",
+                                        "width": 108,
+                                        "height": 108
+                                    },
+                                    {
+                                        "url": "https://i.redditmedia.com/EzL1D8Rt1RoxRZbRW4bxyru2z5_hm-0EcCOlo6pXDts.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=48425d08ef91e8a536bfce2f0d161a68",
+                                        "width": 216,
+                                        "height": 216
+                                    },
+                                    {
+                                        "url": "https://i.redditmedia.com/EzL1D8Rt1RoxRZbRW4bxyru2z5_hm-0EcCOlo6pXDts.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=754f657b3078cb781d6ee644fc628a67",
+                                        "width": 320,
+                                        "height": 320
+                                    }
+                                ],
+                                "variants": {},
+                                "id": "uMxQnbmwzxtgVdO8kWAASz4gmD987-g0OX-biqDpm9Y"
+                            }
+                        ],
+                        "enabled": false
+                    },
+                    "media_only": false,
+                    "can_gild": false,
+                    "spoiler": false,
+                    "locked": false,
+                    "author_flair_text": null,
+                    "rte_mode": "markdown",
+                    "visited": false,
+                    "num_reports": null,
+                    "distinguished": null,
+                    "subreddit_id": "t5_4cyr4",
+                    "mod_reason_by": null,
+                    "removal_reason": null,
+                    "id": "8vsfwj",
+                    "report_reasons": null,
+                    "author": "bprogramming",
+                    "num_crossposts": 0,
+                    "num_comments": 0,
+                    "send_replies": false,
+                    "mod_reports": [],
+                    "author_flair_text_color": null,
+                    "permalink": "/r/bprogramming/comments/8vsfwj/termtosvg_record_terminal_sessions_as_svg/",
+                    "whitelist_status": null,
+                    "stickied": false,
+                    "url": "https://github.com/nbedos/termtosvg",
+                    "subreddit_subscribers": 162,
+                    "created_utc": 1530626626,
+                    "media": null,
+                    "is_video": false
+                }
+            }
+        ],
+        "after": null,
+        "before": null
+    }
+}

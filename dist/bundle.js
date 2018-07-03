@@ -2463,7 +2463,7 @@ var _App2 = _interopRequireDefault(_App);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = new _App2.default();
-app.init([_HnObserver2.default /*, RedditObserver*/]);
+app.init([_HnObserver2.default, _RedditObserver2.default]);
 
 /***/ }),
 
@@ -2626,6 +2626,10 @@ var _Observer2 = __webpack_require__(/*! ./Observer */ "./src/observers/Observer
 
 var _Observer3 = _interopRequireDefault(_Observer2);
 
+var _Result = __webpack_require__(/*! ../data/Result */ "./src/data/Result.js");
+
+var _Result2 = _interopRequireDefault(_Result);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2688,7 +2692,7 @@ var RedditObserver = function (_Observer) {
             return results.data.children.map(function (_ref) {
                 var data = _ref.data;
 
-                return new Result(data.title, RedditObserver.getRedditUrl(data.permalink), data.author, new Date(data.created), data.score, data.num_comments, _this3.sourceName, _this3.sourceIcon);
+                return new _Result2.default(data.title, RedditObserver.getRedditUrl(data.permalink), data.author, new Date(data.created * 1000), data.score, data.num_comments, _this3.sourceName, _this3.sourceIcon);
             });
         }
     }], [{
