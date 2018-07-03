@@ -15,13 +15,14 @@
     padding: 10px;
 }
 
+#comments-list li {
+    border-bottom: 1px solid #CCC;
+}
 #comments-list a {
-    display: flex;
     align-items: flex-start;
-    height: 50px;
-    margin: 0 0 10px 0;
+    display: flex;
+    padding: 10px 0;
     text-decoration: none;
-    width: 400px;
 }
 
 #comments-list a:hover {
@@ -29,11 +30,14 @@
 }
 
 #comments-list a img {
-    height: 50%;
-    margin: 0 10px 0 0;
+    align-self: center;
+    border-radius: 50%;
+    height: 25px;
+    margin: 0 2%;
 }
 
 #comments-list a span.result-meta {
+    align-self: center;
     color: #000;
     display: inline-block;
     font-size: 14px;
@@ -42,9 +46,32 @@
     width: 70%;
 }
 
-#comments-list a span.result-meta span.result-meta-comments {
+#comments-list a span.result-meta-comments {
+    align-self: center;
     color: #CCC;
+    margin: 0 2% 0 auto;
+}
+
+#comments-list a span.result-meta-comments .icon-container {
     display: block;
+    margin: 0 0 3px 0;
+}
+
+#comments-list a span.result-meta-comments .icon-container .icon {
+    background-size: 15px;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin: 0 5px 0 0;
+}
+
+#comments-list a span.result-meta-comments .icon-container .icon-comments {
+    background-image: url("../../icons/chat.png");
+}
+
+#comments-list a span.result-meta-comments .icon-container .icon-karma {
+    background-image: url("../../icons/bolt.png");
 }
 /**
     http://tobiasahlin.com/spinkit/
