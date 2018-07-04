@@ -67,11 +67,11 @@
 }
 
 #comments-list a span.result-meta-comments .icon-container .icon-comments {
-    background-image: url("../../icons/chat.png");
+    background-image: url("../icons/chat.png");
 }
 
 #comments-list a span.result-meta-comments .icon-container .icon-karma {
-    background-image: url("../../icons/bolt.png");
+    background-image: url("../icons/bolt.png");
 }
 /**
     http://tobiasahlin.com/spinkit/
