@@ -26,11 +26,20 @@ function showResults(results) {
     }
 
     let commentsListContainer = document.getElementById('comments-list-container');
+    let commentsList = document.getElementById('comments-list');
 
-    let template = document.getElementById('results-template').innerHTML;
-    Mustache.parse(template);
+    removeAllChildNodes(commentsListContainer);
 
-    commentsListContainer.innerHTML = Mustache.render(template, {results: results});
+    results.forEach(function (result) {
+        const resultDOMElement = new ResultDOM(result);
+        commentsList.appendChild(resultDOMElement.html);
+    });
 
     commentsListContainer.style.display = 'block';
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.hasChildNodes()) {
+        parent.removeChild(parent.lastChild);
+    }
 }

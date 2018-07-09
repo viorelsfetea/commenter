@@ -22,33 +22,12 @@
                 <div class="rect4"></div>
                 <div class="rect5"></div>
             </div>
-            <div id="comments-list-container"></div>
+            <div id="comments-list-container">
+                <ul id="comments-list"></ul>
+            </div>
         </div>
     </div>
-    <script src="mustache.min.js"></script>
+    <script src="ResultDOM.js"></script>
     <script src="commenter.js"></script>
-
-    <script id="results-template" type="x-tmpl-mustache">
-        <ul id="comments-list">
-            {{#results}}
-                <li>
-                    <a href="{{_url}}">
-                        <img src="{{_sourceIcon}}" alt="">
-                        <span class="result-meta">
-                            {{_title}}
-                        </span>
-                        <span class="result-meta-comments">
-                            <span class="icon-container">
-                                <span class="icon icon-comments"></span>{{_totalComments}}
-                            </span>
-                            <span class="icon-container">
-                                <span class="icon icon-karma"></span>{{_totalKarma}}
-                            </span>
-                        </span>
-                    </a>
-                </li>
-            {{/results}}
-        </ul
-    </script>
 </body>
 </html>

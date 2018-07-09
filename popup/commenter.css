@@ -36,7 +36,7 @@
     margin: 0 2%;
 }
 
-#comments-list a span.result-meta {
+#comments-list a span.result-title {
     align-self: center;
     color: #000;
     display: inline-block;
@@ -46,18 +46,18 @@
     width: 70%;
 }
 
-#comments-list a span.result-meta-comments {
+#comments-list a span.result-meta {
     align-self: center;
     color: #CCC;
     margin: 0 2% 0 auto;
 }
 
-#comments-list a span.result-meta-comments .icon-container {
+#comments-list a span.result-meta .icon-container {
     display: block;
     margin: 0 0 3px 0;
 }
 
-#comments-list a span.result-meta-comments .icon-container .icon {
+#comments-list a span.result-meta .icon-container .icon {
     background-size: 15px;
     height: 15px;
     width: 15px;
@@ -66,11 +66,11 @@
     margin: 0 5px 0 0;
 }
 
-#comments-list a span.result-meta-comments .icon-container .icon-comments {
+#comments-list a span.result-meta .icon-container .icon-comments {
     background-image: url("../icons/chat.png");
 }
 
-#comments-list a span.result-meta-comments .icon-container .icon-karma {
+#comments-list a span.result-meta .icon-container .icon-karma {
     background-image: url("../icons/bolt.png");
 }
 /**
