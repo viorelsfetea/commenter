@@ -16,7 +16,7 @@ describe("Reddit Observer Suite", function() {
         assert.equal(actual.totalKarma, expected.totalKarma);
         assert.equal(actual.totalComments, expected.totalComments);
         assert.equal(actual.sourceName, expected.sourceName);
-        assert.equal(actual.sourceIcon, expected.sourceIcon);
+        assert.equal(actual.sourceIconCSSClass, expected.sourceIconCSSClass);
     };
 
     beforeEach(function () {
@@ -56,14 +56,14 @@ describe("Reddit Observer Suite", function() {
             assert.equal(results.length, 1);
             verifyResultItem(results[0], {
                 constructor: 'Result',
-                title: 'Termtosvg – Record terminal sessions as SVG animations',
+                title: '/r/bprogramming: Termtosvg – Record terminal sessions as SVG animations',
                 url: 'https://www.reddit.com/r/bprogramming/comments/8vsfwj/termtosvg_record_terminal_sessions_as_svg/',
                 author: 'bprogramming',
                 creationDate: new Date('Tue, 03 Jul 2018 22:03:46 GMT'),
                 totalKarma: 1,
                 totalComments: 0,
                 sourceName: 'Reddit',
-                sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
+                sourceIconCSSClass: 'fab fa-reddit-square'
             });
 
             done();
@@ -89,38 +89,38 @@ describe("Reddit Observer Suite", function() {
 
                 verifyResultItem(results[0], {
                     constructor: 'Result',
-                    title: 'Termtosvg – Record terminal sessions as SVG animations',
+                    title: '/r/bprogramming: Termtosvg – Record terminal sessions as SVG animations',
                     url: 'https://www.reddit.com/r/bprogramming/comments/8vsfwj/termtosvg_record_terminal_sessions_as_svg/',
                     author: 'bprogramming',
                     creationDate: new Date('Tue, 03 Jul 2018 22:03:46 GMT'),
                     totalKarma: 1,
                     totalComments: 0,
                     sourceName: 'Reddit',
-                    sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
+                    sourceIconCSSClass: 'fab fa-reddit-square'
                 });
 
                 verifyResultItem(results[1], {
                     constructor: 'Result',
-                    title: 'Terminal session to SVG',
+                    title: '/r/Python: Terminal session to SVG',
                     url: 'https://www.reddit.com/r/Python/comments/8uvbcl/terminal_session_to_svg/',
                     author: 'IT4ddict',
                     creationDate: new Date('Sat, 30 Jun 2018 02:10:40 GMT'),
                     totalKarma: 55,
                     totalComments: 12,
                     sourceName: 'Reddit',
-                    sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
+                    sourceIconCSSClass: 'fab fa-reddit-square'
                 });
 
                 verifyResultItem(results[2], {
                     constructor: 'Result',
-                    title: 'termtosvg - Record terminal sessions as SVG animations',
+                    title: '/r/commandline: termtosvg - Record terminal sessions as SVG animations',
                     url: 'https://www.reddit.com/r/commandline/comments/8tkf95/termtosvg_record_terminal_sessions_as_svg/',
                     author: 'NervousScentedEagle',
                     creationDate: new Date('Mon, 25 Jun 2018 03:59:57 GMT'),
                     totalKarma: 134,
                     totalComments: 9,
                     sourceName: 'Reddit',
-                    sourceIcon: 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'
+                    sourceIconCSSClass: 'fab fa-reddit-square'
                 });
 
                 done();

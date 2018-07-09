@@ -2284,7 +2284,7 @@ var KARMA_WEIGHT_FACTOR = 1;
 var COMMENTS_WEIGHT_FACTOR = 10;
 
 var Result = function () {
-    function Result(title, url, author, creationDate, totalKarma, totalComments, sourceName, sourceIcon) {
+    function Result(title, url, author, creationDate, totalKarma, totalComments, sourceName, sourceIconCSSClass) {
         _classCallCheck(this, Result);
 
         this._title = title;
@@ -2294,7 +2294,7 @@ var Result = function () {
         this._totalKarma = totalKarma;
         this._totalComments = totalComments;
         this._sourceName = sourceName;
-        this._sourceIcon = sourceIcon;
+        this._sourceIconCSSClass = sourceIconCSSClass;
         this._weight = (this._totalKarma * KARMA_WEIGHT_FACTOR + this._totalComments * COMMENTS_WEIGHT_FACTOR) / KARMA_WEIGHT_FACTOR + COMMENTS_WEIGHT_FACTOR;
     }
 
@@ -2334,9 +2334,9 @@ var Result = function () {
             return this._sourceName;
         }
     }, {
-        key: "sourceIcon",
+        key: "sourceIconCSSClass",
         get: function get() {
-            return this._sourceIcon;
+            return this._sourceIconCSSClass;
         }
     }, {
         key: "weight",
@@ -2515,7 +2515,7 @@ var HnObserver = function (_Observer) {
         var _this = _possibleConstructorReturn(this, (HnObserver.__proto__ || Object.getPrototypeOf(HnObserver)).call(this));
 
         _this.sourceName = 'HackerNews';
-        _this.sourceIcon = 'https://news.ycombinator.com/favicon.ico'; //TODO move this to a local file
+        _this.sourceIconCSSClass = 'fab fa-hacker-news-square';
         return _this;
     }
 
@@ -2540,7 +2540,7 @@ var HnObserver = function (_Observer) {
             if (!results.hasOwnProperty('hits') || results.hits.length === 0) return [];
 
             return results.hits.map(function (result) {
-                return new _Result2.default(result.title, HnObserver.getHNUrl(result.objectID), result.author, new Date(result.created_at), result.points, result.num_comments, _this3.sourceName, _this3.sourceIcon);
+                return new _Result2.default(result.title, HnObserver.getHNUrl(result.objectID), result.author, new Date(result.created_at), result.points, result.num_comments, _this3.sourceName, _this3.sourceIconCSSClass);
             });
         }
     }], [{
@@ -2586,7 +2586,7 @@ var Observer = function () {
         _classCallCheck(this, Observer);
 
         this.sourceName = 'Unknown source';
-        this.sourceIcon = '';
+        this.sourceIconCSSClass = '';
     }
 
     _createClass(Observer, [{
@@ -2650,7 +2650,7 @@ var RedditObserver = function (_Observer) {
         var _this = _possibleConstructorReturn(this, (RedditObserver.__proto__ || Object.getPrototypeOf(RedditObserver)).call(this));
 
         _this.sourceName = 'Reddit';
-        _this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //TODO: move this to a local file
+        _this.sourceIconCSSClass = 'fab fa-reddit-square';
         return _this;
     }
 
@@ -2692,15 +2692,10 @@ var RedditObserver = function (_Observer) {
             return results.data.children.map(function (_ref) {
                 var data = _ref.data;
 
-                return new _Result2.default(data.title, RedditObserver.getRedditUrl(data.permalink), data.author, new Date(data.created * 1000), data.score, data.num_comments, _this3.sourceName, _this3.sourceIcon);
+                return new _Result2.default('/r/' + data.subreddit + ': ' + data.title, RedditObserver.getRedditUrl(data.permalink), data.author, new Date(data.created * 1000), data.score, data.num_comments, _this3.sourceName, _this3.sourceIconCSSClass);
             });
         }
     }], [{
-        key: 'isSuccessfulRequest',
-        value: function isSuccessfulRequest(xmlHttp) {
-            return xmlHttp.readyState === XMLHttpRequest.DONE && xmlHttp.status === 200 && xmlHttp.responseText.length > 0;
-        }
-    }, {
         key: 'getFullUrl',
         value: function getFullUrl(url) {
             return REDDIT_SEARCH_URL_FORMAT.replace('{url}', encodeURI(url));

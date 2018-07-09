@@ -9,8 +9,10 @@ class MockObserverOne extends Observer {
         this.notified = false;
     }
 
-    notify(tabId, tabUrl, callback) {
+    notify(tabId, tabUrl) {
         this.notified = true;
+
+        return new Promise((resolve) => {resolve()});
     }
 }
 

@@ -10,7 +10,7 @@ class HnObserver extends Observer {
     constructor() {
         super();
         this.sourceName = 'HackerNews';
-        this.sourceIcon = 'https://news.ycombinator.com/favicon.ico'; //TODO move this to a local file
+        this.sourceIconCSSClass = 'fab fa-hacker-news-square';
     }
 
     notify(tabId, tabUrl) {
@@ -38,7 +38,7 @@ class HnObserver extends Observer {
                 result.points,
                 result.num_comments,
                 this.sourceName,
-                this.sourceIcon
+                this.sourceIconCSSClass
             );
         });
     }

@@ -3,7 +3,7 @@
 class Observer {
     constructor() {
         this.sourceName = 'Unknown source';
-        this.sourceIcon = '';
+        this.sourceIconCSSClass = '';
     }
 
     notify(tabId, tabUrl) {}

@@ -10,7 +10,7 @@ class RedditObserver extends Observer {
     constructor() {
         super();
         this.sourceName = 'Reddit';
-        this.sourceIcon = 'https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png'; //TODO: move this to a local file
+        this.sourceIconCSSClass = 'fab fa-reddit-square';
     }
 
     notify(tabId, tabUrl, callback) {return new Promise((resolve, reject) => {
@@ -44,20 +44,16 @@ class RedditObserver extends Observer {
 
         return results.data.children.map(({data}) => {
             return new Result(
-                data.title,
+                '/r/' + data.subreddit + ': ' + data.title,
                 RedditObserver.getRedditUrl(data.permalink),
                 data.author,
                 new Date(data.created * 1000),
                 data.score,
                 data.num_comments,
                 this.sourceName,
-                this.sourceIcon
+                this.sourceIconCSSClass
             );
         });
-    }
-
-    static isSuccessfulRequest(xmlHttp) {
-        return xmlHttp.readyState === XMLHttpRequest.DONE && xmlHttp.status === 200 && xmlHttp.responseText.length > 0;
     }
 
     static getFullUrl(url) {

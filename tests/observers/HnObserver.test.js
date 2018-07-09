@@ -16,7 +16,7 @@ describe("HackerNews Observer Suite", function() {
         assert.equal(actual.totalKarma, expected.totalKarma);
         assert.equal(actual.totalComments, expected.totalComments);
         assert.equal(actual.sourceName, expected.sourceName);
-        assert.equal(actual.sourceIcon, expected.sourceIcon);
+        assert.equal(actual.sourceIconCSSClass, expected.sourceIconCSSClass);
     };
 
     beforeEach(function () {
@@ -63,7 +63,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 301,
                 totalComments: 93,
                 sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
+                sourceIconCSSClass: 'fab fa-hacker-news-square'
             });
 
             done();
@@ -96,7 +96,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 1656,
                 totalComments: 120,
                 sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
+                sourceIconCSSClass: 'fab fa-hacker-news-square'
             });
 
             verifyResultItem(results[1], {
@@ -108,7 +108,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 1522,
                 totalComments: 308,
                 sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
+                sourceIconCSSClass: 'fab fa-hacker-news-square'
             });
 
             verifyResultItem(results[2], {
@@ -120,7 +120,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 1217,
                 totalComments: 304,
                 sourceName: 'HackerNews',
-                sourceIcon: 'https://news.ycombinator.com/favicon.ico'
+                sourceIconCSSClass: 'fab fa-hacker-news-square'
             });
 
             done();

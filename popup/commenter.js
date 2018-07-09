@@ -28,7 +28,7 @@ function showResults(results) {
     let commentsListContainer = document.getElementById('comments-list-container');
     let commentsList = document.getElementById('comments-list');
 
-    removeAllChildNodes(commentsListContainer);
+    removeAllChildNodes(commentsList);
 
     results.forEach(function (result) {
         const resultDOMElement = new ResultDOM(result);

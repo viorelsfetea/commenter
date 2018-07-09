@@ -29,11 +29,18 @@
     background: #EEE;
 }
 
-#comments-list a img {
+#comments-list a .result-icon {
     align-self: center;
-    border-radius: 50%;
-    height: 25px;
+    font-size: 35px;
     margin: 0 2%;
+}
+
+#comments-list a .result-icon.fa-hacker-news-square {
+    color: #FF6600;
+}
+
+#comments-list a .result-icon.fa-reddit-square {
+    color: #D3F3FE;
 }
 
 #comments-list a span.result-title {
@@ -44,6 +51,13 @@
     font-weight: bold;
     vertical-align: top;
     width: 70%;
+}
+
+#comments-list a span.result-title span.result-date {
+    color: #CCC;
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 #comments-list a span.result-meta {
