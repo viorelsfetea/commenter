@@ -63,7 +63,7 @@ class ResultDOM {
         const commentsNode = document.createElement('span');
         const commentsIconNode = document.createElement('span');
         commentsNode.className = 'icon-container';
-        commentsIconNode.className = 'icon icon-comments';
+        commentsIconNode.className = 'icon icon-comments far fa-arrow-alt-circle-up';
 
         commentsNode.appendChild(commentsIconNode);
         commentsNode.appendChild(document.createTextNode(this.result._totalComments));
@@ -75,7 +75,7 @@ class ResultDOM {
         const karmaNode = document.createElement('span');
         const karmaIconNode = document.createElement('span');
         karmaNode.className = 'icon-container';
-        karmaIconNode.className = 'icon icon-karma';
+        karmaIconNode.className = 'icon icon-karma far fa-comments';
 
         karmaNode.appendChild(karmaIconNode);
         karmaNode.appendChild(document.createTextNode(this.result._totalKarma));

@@ -17,6 +17,7 @@
 
 #comments-list li {
     border-bottom: 1px solid #CCC;
+    min-width: 300px;
 }
 #comments-list a {
     align-items: flex-start;
@@ -78,14 +79,6 @@
     display: inline-block;
     vertical-align: text-bottom;
     margin: 0 5px 0 0;
-}
-
-#comments-list a span.result-meta .icon-container .icon-comments {
-    background-image: url("../icons/chat.png");
-}
-
-#comments-list a span.result-meta .icon-container .icon-karma {
-    background-image: url("../icons/bolt.png");
 }
 /**
     http://tobiasahlin.com/spinkit/

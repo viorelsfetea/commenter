@@ -1,9 +1,8 @@
 {
     "manifest_version": 2,
     "name": "The Commenter",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Searches the comments for the current tab's url",
-
     "icons": {
         "48": "icons/48.png",
         "96": "icons/96.png"
