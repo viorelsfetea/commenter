@@ -1,7 +1,8 @@
+import browser from 'webextension-polyfill'
+
 import Results from './data/Results';
 import ActionsObservable from "./classes/ActionsObservable";
 import Builder from "./classes/Builder";
-
 class App {
     constructor() {
         this.results = new Results(this.resultsUpdatedCallback.bind(this));

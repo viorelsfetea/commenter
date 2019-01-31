@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "The Commenter",
-    "version": "0.1.2",
+    "version": "1",
     "description": "Searches the comments for the current tab's url",
     "icons": {
         "48": "icons/48.png",
@@ -30,7 +30,7 @@
     },
     "applications": {
         "gecko": {
-            "id": "commenter.extension@sfetea.ro"
+            "id": "commenter.extension@viorel.me"
         }
     }
 }
