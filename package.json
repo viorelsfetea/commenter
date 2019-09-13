@@ -2,8 +2,8 @@
     "name": "commenter",
     "version": "0.0.1",
     "dependencies": {
-        "axios": "0.18.0",
-        "webextension-polyfill": "0.3.1"
+        "axios": "0.18.1",
+        "webextension-polyfill": "~0.4.0"
     },
     "devDependencies": {
         "babel-core": "6.26.3",
