@@ -2,23 +2,23 @@
     "name": "commenter",
     "version": "0.0.1",
     "dependencies": {
-        "axios": "0.18.1",
-        "webextension-polyfill": "~0.4.0"
+        "axios": "0.19.2",
+        "webextension-polyfill": "0.6.0"
     },
     "devDependencies": {
-        "babel-core": "6.26.3",
-        "babel-loader": "7.1.4",
-        "babel-plugin-add-module-exports": "^0.2.1",
-        "babel-polyfill": "6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.1.0",
+        "babel-plugin-add-module-exports": "^1.0",
+        "babel-polyfill": "^6.26",
         "babel-preset-env": "1.7.0",
-        "babel-register": "^6.16.3",
-        "chai": "^4.1.2",
-        "mocha": "^5.1.1",
+        "babel-register": "^6.26",
+        "chai": "^4.2",
+        "mocha": "^7.2.0",
         "moxios": "^0.4.0",
-        "sinon": "^6.0.0",
-        "sinon-chrome": "^2.3.2",
-        "webpack": "4.12.2",
-        "webpack-cli": "^3.2.1"
+        "sinon": "^9.0",
+        "sinon-chrome": "^3.0.1",
+        "webpack": "4.43",
+        "webpack-cli": "^3.3"
     },
     "scripts": {
         "test": "mocha --require babel-register tests/*"
