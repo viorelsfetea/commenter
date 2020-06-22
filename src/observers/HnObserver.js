@@ -10,7 +10,7 @@ class HnObserver extends Observer {
     constructor() {
         super();
         this.sourceName = 'HackerNews';
-        this.sourceIconCSSClass = 'fab fa-hacker-news-square';
+        this.icon = '/icons/hacker-news-square.svg';
     }
 
     notify(tabId, tabUrl) {
@@ -34,11 +34,11 @@ class HnObserver extends Observer {
                 result.title,
                 HnObserver.getHNUrl(result.objectID),
                 result.author,
-                new Date(result.created_at),
+                result.created_at,
                 result.points,
                 result.num_comments,
                 this.sourceName,
-                this.sourceIconCSSClass
+                this.icon
             );
         });
     }

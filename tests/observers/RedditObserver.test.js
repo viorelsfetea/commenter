@@ -16,7 +16,7 @@ describe("Reddit Observer Suite", function() {
         assert.equal(actual.totalKarma, expected.totalKarma);
         assert.equal(actual.totalComments, expected.totalComments);
         assert.equal(actual.sourceName, expected.sourceName);
-        assert.equal(actual.sourceIconCSSClass, expected.sourceIconCSSClass);
+        assert.equal(actual.icon, expected.icon);
     };
 
     beforeEach(function () {
@@ -63,7 +63,7 @@ describe("Reddit Observer Suite", function() {
                 totalKarma: 1,
                 totalComments: 0,
                 sourceName: 'Reddit',
-                sourceIconCSSClass: 'fab fa-reddit-square'
+                icon: 'fab fa-reddit-square'
             });
 
             done();
@@ -96,7 +96,7 @@ describe("Reddit Observer Suite", function() {
                     totalKarma: 1,
                     totalComments: 0,
                     sourceName: 'Reddit',
-                    sourceIconCSSClass: 'fab fa-reddit-square'
+                    icon: 'fab fa-reddit-square'
                 });
 
                 verifyResultItem(results[1], {
@@ -108,7 +108,7 @@ describe("Reddit Observer Suite", function() {
                     totalKarma: 55,
                     totalComments: 12,
                     sourceName: 'Reddit',
-                    sourceIconCSSClass: 'fab fa-reddit-square'
+                    icon: 'fab fa-reddit-square'
                 });
 
                 verifyResultItem(results[2], {
@@ -120,7 +120,7 @@ describe("Reddit Observer Suite", function() {
                     totalKarma: 134,
                     totalComments: 9,
                     sourceName: 'Reddit',
-                    sourceIconCSSClass: 'fab fa-reddit-square'
+                    icon: 'fab fa-reddit-square'
                 });
 
                 done();

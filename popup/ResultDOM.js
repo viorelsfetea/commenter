@@ -18,20 +18,21 @@ class ResultDOM {
     get linkNode() {
         const linkNode = document.createElement('a');
         linkNode.href = this.result._url;
+        linkNode.target = "_blank";
 
-        linkNode.appendChild(this.sourceIconNode);
+        linkNode.appendChild(this.icon);
         linkNode.appendChild(this.titleNode);
         linkNode.appendChild(this.metaNode);
 
         return linkNode;
     }
 
-    get sourceIconNode() {
-        console.log(this.result);
-        const sourceIconNode = document.createElement('i');
-        sourceIconNode.className = 'result-icon ' + this.result._sourceIconCSSClass;
+    get icon() {
+        const iconNode = document.createElement('img');
+        iconNode.className = 'result-icon';
+        iconNode.src = this.result._icon;
 
-        return sourceIconNode;
+        return iconNode;
     }
 
     get titleNode() {
@@ -61,9 +62,10 @@ class ResultDOM {
 
     get commentsNode() {
         const commentsNode = document.createElement('span');
-        const commentsIconNode = document.createElement('span');
+        const commentsIconNode = document.createElement('img');
         commentsNode.className = 'icon-container';
-        commentsIconNode.className = 'icon icon-comments far fa-arrow-alt-circle-up';
+        commentsIconNode.src = '/icons/comments.svg';
+        commentsIconNode.className = 'icon icon-comments';
 
         commentsNode.appendChild(commentsIconNode);
         commentsNode.appendChild(document.createTextNode(this.result._totalComments));
@@ -73,9 +75,10 @@ class ResultDOM {
 
     get karmaNode() {
         const karmaNode = document.createElement('span');
-        const karmaIconNode = document.createElement('span');
+        const karmaIconNode = document.createElement('img');
         karmaNode.className = 'icon-container';
-        karmaIconNode.className = 'icon icon-karma far fa-comments';
+        karmaIconNode.src = '/icons/arrow-alt-circle-up.svg';
+        karmaIconNode.className = 'icon icon-karma';
 
         karmaNode.appendChild(karmaIconNode);
         karmaNode.appendChild(document.createTextNode(this.result._totalKarma));
@@ -84,7 +87,7 @@ class ResultDOM {
     }
 
     static timeSince(date) {
-        const seconds = Math.floor((new Date() - date) / 1000);
+        const seconds = Math.floor((new Date() - new Date(date)) / 1000);
         const SECONDS_IN_YEAR = 31536000;
         const SECONDS_IN_MONTH = 2592000;
         const SECONDS_IN_DAY = 86400;

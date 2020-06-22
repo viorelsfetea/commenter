@@ -16,7 +16,7 @@ describe("HackerNews Observer Suite", function() {
         assert.equal(actual.totalKarma, expected.totalKarma);
         assert.equal(actual.totalComments, expected.totalComments);
         assert.equal(actual.sourceName, expected.sourceName);
-        assert.equal(actual.sourceIconCSSClass, expected.sourceIconCSSClass);
+        assert.equal(actual.icon, expected.icon);
     };
 
     beforeEach(function () {
@@ -63,7 +63,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 301,
                 totalComments: 93,
                 sourceName: 'HackerNews',
-                sourceIconCSSClass: 'fab fa-hacker-news-square'
+                icon: 'icons/hacker-news-square.svg'
             });
 
             done();
@@ -96,7 +96,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 1656,
                 totalComments: 120,
                 sourceName: 'HackerNews',
-                sourceIconCSSClass: 'fab fa-hacker-news-square'
+                icon: 'icons/hacker-news-square.svg'
             });
 
             verifyResultItem(results[1], {
@@ -108,7 +108,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 1522,
                 totalComments: 308,
                 sourceName: 'HackerNews',
-                sourceIconCSSClass: 'fab fa-hacker-news-square'
+                icon: 'icons/hacker-news-square.svg'
             });
 
             verifyResultItem(results[2], {
@@ -120,7 +120,7 @@ describe("HackerNews Observer Suite", function() {
                 totalKarma: 1217,
                 totalComments: 304,
                 sourceName: 'HackerNews',
-                sourceIconCSSClass: 'fab fa-hacker-news-square'
+                icon: 'icons/hacker-news-square.svg'
             });
 
             done();

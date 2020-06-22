@@ -10,7 +10,7 @@ class RedditObserver extends Observer {
     constructor() {
         super();
         this.sourceName = 'Reddit';
-        this.sourceIconCSSClass = 'fab fa-reddit-square';
+        this.icon = '/icons/reddit-square.svg';
     }
 
     notify(tabId, tabUrl, callback) {return new Promise((resolve, reject) => {
@@ -47,11 +47,11 @@ class RedditObserver extends Observer {
                 '/r/' + data.subreddit + ': ' + data.title,
                 RedditObserver.getRedditUrl(data.permalink),
                 data.author,
-                new Date(data.created * 1000),
+                data.created * 1000,
                 data.score,
                 data.num_comments,
                 this.sourceName,
-                this.sourceIconCSSClass
+                this.icon
             );
         });
     }
