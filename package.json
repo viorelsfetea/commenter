@@ -7,7 +7,7 @@
     },
     "devDependencies": {
         "babel-core": "^6.26.3",
-        "babel-loader": "^8.1.0",
+        "babel-loader": "^7.1.5",
         "babel-plugin-add-module-exports": "^1.0",
         "babel-polyfill": "^6.26",
         "babel-preset-env": "1.7.0",
@@ -18,9 +18,12 @@
         "sinon": "^9.0",
         "sinon-chrome": "^3.0.1",
         "webpack": "4.43",
-        "webpack-cli": "^3.3"
+        "webpack-cli": "^3.3",
+        "web-ext": "4.2.0"
     },
     "scripts": {
-        "test": "mocha --require babel-register tests/*"
+        "test": "mocha --require babel-register tests/*",
+        "dev": "webpack --watch --mode development",
+        "start:firefox": "web-ext run"
     }
 }
