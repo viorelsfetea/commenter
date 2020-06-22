@@ -1,6 +1,7 @@
 #commenter-content {
     padding: 10px;
-    width: 600px;
+    min-width: 500px;
+    max-width: 600px;
 }
 
 #commenter-content h1 {
