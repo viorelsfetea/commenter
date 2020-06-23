@@ -1,17 +1,20 @@
 ## Commenter web-extension
 
-An, uhm, extendable web-extension that reads the URL you're visiting and searches other submissions of it on other websites. Like this:
+An extendable web-extension that reads the URL you're visiting and searches other submissions of it on other websites. Like this:
 
 ![A demo](https://i.imgur.com/yWSfDFs.gif)
 
 ### Now, what would you use that for?
 
-Maybe you're browsing the old internet one day and you see an article. And you get this really big urge to see what the fine people on HackerNews said about it. Or maybe you want to post it yourself and you want to see if anybody had the same idea (they probably did, but if it's under three submissions, it really doesn't matter!).
+Different communities discuss things differently. Different ideas, different tone, different experiences. Use it to expand your learning starting from one link.
 
-Or, maybe you've found this great article on HackerNews and you want to see what the other kind of fine people from Reddit have to say about _that_.
+Or maybe you've found an article you'd like to share. Use this extension to see if it's already been posted. 
 
 **Currently supported sources:** HackerNews and Reddit.
 
+**Currently supported browsers:** This extension has been developed on Firefox and extended to work on Chromium-based browsers. 
+It has been tested on Chrome and Edge. It should also work in Opera.
+ 
 _This works for Firefox. Also for Chrome. Are you using Edge? I don't judge, it works there too. The magic of web-extensions._
 
 ### Want to extend it? Cool! Here's how

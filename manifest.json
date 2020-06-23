@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "The Commenter",
-    "version": "1.2",
+    "version": "1.2.1",
     "description": "Searches the comments for the current tab's url",
     "icons": {
         "48": "icons/48.png",
@@ -10,7 +10,6 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "storage",
         "*://hn.algolia.com/*",
         "*://www.reddit.com/*"
     ],
