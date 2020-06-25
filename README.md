@@ -15,9 +15,16 @@ Or maybe you've found an article you'd like to share. Use this extension to see 
 **Currently supported browsers:** This extension has been developed on Firefox and extended to work on Chromium-based browsers. 
 It has been tested on Chrome and Edge. It should also work in Opera.
  
-_This works for Firefox. Also for Chrome. Are you using Edge? I don't judge, it works there too. The magic of web-extensions._
+### Download
+<a href="https://addons.mozilla.org/en-US/firefox/addon/the-commenter/" target="_blank" title="Download for Firefox">
+    <img src="icons/logo-firefox.svg" width="120">
+</a>
 
-### Want to extend it? Cool! Here's how
+<a href="https://chrome.google.com/webstore/detail/the-commenter/glhpoenomnnhjddjloedbjoeeianflod" target="_blank" title="Download for Chrome, Edge and Opera">
+    <img src="icons/logo-chrome.png" width="120">
+</a>
+
+### Want to extend it and more sources? Cool! Here's how
 Steps:
 1. Of course, you need to fork the repo.
 2. Read a guide about web-extensions to see how they work (totally optional)
