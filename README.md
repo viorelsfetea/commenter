@@ -2,7 +2,7 @@
 
 An extendable web-extension that reads the URL you're visiting and searches other submissions of it on other websites. Like this:
 
-![A demo](https://i.imgur.com/yWSfDFs.gif)
+![A demo](demo.gif)
 
 ### Now, what would you use that for?
 
@@ -17,11 +17,11 @@ It has been tested on Chrome and Edge. It should also work in Opera.
  
 ### Download
 <a href="https://addons.mozilla.org/en-US/firefox/addon/the-commenter/" target="_blank" title="Download for Firefox">
-    <img src="icons/logo-firefox.svg" width="120">
+    <img src="icons/logo-firefox.svg" width="250">
 </a>
 
-<a href="https://chrome.google.com/webstore/detail/the-commenter/glhpoenomnnhjddjloedbjoeeianflod" target="_blank" title="Download for Chrome, Edge and Opera">
-    <img src="icons/logo-chrome.png" width="120">
+<a href="https://chrome.google.com/webstore/detail/the-commenter/glhpoenomnnhjddjloedbjoeeianflod" target="_blank" title="Download for Chrome, Edge and Opera" style="margin-left: 100px;">
+    <img src="icons/logo-chrome.png" width="320">
 </a>
 
 ### Want to extend it and more sources? Cool! Here's how
