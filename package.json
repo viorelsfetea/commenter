@@ -19,7 +19,7 @@
         "sinon-chrome": "^3.0.1",
         "webpack": "4.43",
         "webpack-cli": "^3.3",
-        "web-ext": "4.2.0"
+        "web-ext": "4.3.0"
     },
     "scripts": {
         "test": "mocha --require babel-register tests/*",
